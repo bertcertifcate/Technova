@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        :root {
+            --ink: #18212b;
+            --muted: #6b7785;
+            --paper: #f7f8fa;
+            --line: #e2e7ec;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            color: var(--ink);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            padding: 36px 24px 56px;
+        }
+
+        .page-header {
+            margin: 0 auto 28px;
+            max-width: 1100px;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin: 0;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+
+        .gallery figure {
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .gallery img {
+            aspect-ratio: 1 / 1;
+            cursor: zoom-in;
+            display: block;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .gallery figcaption {
+            color: var(--muted);
+            font-size: .8rem;
+            padding: 8px 10px;
+        }
+
+        .lightbox {
+            align-items: center;
+            background: rgba(11, 16, 22, .9);
+            display: none;
+            inset: 0;
+            justify-content: center;
+            padding: 30px;
+            position: fixed;
+            z-index: 10;
+        }
+
+        .lightbox.is-open {
+            display: flex;
+        }
+
+        .lightbox img {
+            border: 2px solid #fff;
+            border-radius: 4px;
+            max-height: calc(100vh - 60px);
+            max-width: min(1200px, 95vw);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            color: var(--ink);
+            cursor: pointer;
+            font-size: 1.3rem;
+            height: 38px;
+            line-height: 1;
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            width: 38px;
+        }
+
+        @media (max-width: 560px) {
+            body {
+                padding: 28px 14px 42px;
+            }
+
+            .gallery {
+                gap: 12px;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .gallery figcaption {
+                font-size: .68rem;
+                padding: 9px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <h1>Photo Gallery</h1>
+    </header>
+    <div class="gallery">
+        <figure><img src="https://picsum.photos/id/1011/200/200" alt="Picture 1"><figcaption>Picture 1</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1012/200/200" alt="Picture 2"><figcaption>Picture 2</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1013/200/200" alt="Picture 3"><figcaption>Picture 3</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1014/200/200" alt="Picture 4"><figcaption>Picture 4</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1015/200/200" alt="Picture 5"><figcaption>Picture 5</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1016/200/200" alt="Picture 6"><figcaption>Picture 6</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1018/200/200" alt="Picture 7"><figcaption>Picture 7</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1020/200/200" alt="Picture 8"><figcaption>Picture 8</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1021/200/200" alt="Picture 9"><figcaption>Picture 9</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1022/200/200" alt="Picture 10"><figcaption>Picture 10</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1023/200/200" alt="Picture 11"><figcaption>Picture 11</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1024/200/200" alt="Picture 12"><figcaption>Picture 12</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1025/200/200" alt="Picture 13"><figcaption>Picture 13</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1026/200/200" alt="Picture 14"><figcaption>Picture 14</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1027/200/200" alt="Picture 15"><figcaption>Picture 15</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1028/200/200" alt="Picture 16"><figcaption>Picture 16</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1029/200/200" alt="Picture 17"><figcaption>Picture 17</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/picture18/200/200" data-full="https://picsum.photos/seed/picture18/1200/1200" alt="Picture 18"><figcaption>Picture 18</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1031/200/200" alt="Picture 19"><figcaption>Picture 19</figcaption></figure>
+        <figure><img src="https://picsum.photos/id/1032/200/200" alt="Picture 20"><figcaption>Picture 20</figcaption></figure>
+    </div>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded image">
+        <button class="lightbox-close" type="button" aria-label="Close expanded image">&times;</button>
+        <img src="" alt="">
+    </div>
+
+    <script>
+        const lightbox = document.querySelector('#lightbox');
+        const lightboxImage = lightbox.querySelector('img');
+        const closeButton = lightbox.querySelector('.lightbox-close');
+        const galleryImages = document.querySelectorAll('.gallery img');
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('is-open');
+            document.body.style.overflow = '';
+            lightboxImage.src = '';
+        };
+
+        galleryImages.forEach((image) => {
+            image.addEventListener('click', () => {
+                lightboxImage.src = image.dataset.full || image.src.replace('/200/200', '/1200/1200');
+                lightboxImage.alt = image.alt;
+                lightbox.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+                closeButton.focus();
+            });
+        });
+
+        closeButton.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

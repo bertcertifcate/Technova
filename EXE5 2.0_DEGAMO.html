@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sa Aking Mga Kabata</title>
+    <style>
+        :root {
+            --ink: #2f2a26;
+            --muted: #756b63;
+            --accent: #9d3d3d;
+            --paper: #fbf8f2;
+            --line: #e5ddd2;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e9e2d8;
+            color: var(--ink);
+            font-family: Georgia, serif;
+            margin: 0;
+            padding: 48px 20px 64px;
+        }
+
+        body::before {
+            background: var(--paper);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            box-shadow: 0 18px 45px rgba(69, 55, 42, .12);
+            content: "";
+            inset: 20px max(20px, calc((100% - 980px) / 2));
+            position: fixed;
+            z-index: -1;
+        }
+
+        h1 {
+            color: var(--ink);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            letter-spacing: .02em;
+            margin: 0 auto 52px;
+            max-width: 820px;
+            text-align: center;
+        }
+
+        h1::after {
+            background: var(--accent);
+            content: "";
+            display: block;
+            height: 3px;
+            margin: 18px auto 0;
+            width: 48px;
+        }
+
+        .stanza {
+            color: var(--accent);
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            line-height: 1.9;
+            margin: 0 auto 10px;
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .stanza mark {
+            background: #f4df9e;
+            color: inherit;
+            padding: 2px 5px;
+        }
+
+        .author {
+            color: var(--muted);
+            font-size: .95rem;
+            margin: 0 auto 22px;
+            max-width: 700px;
+            text-align: right;
+        }
+
+        .author strong {
+            color: var(--ink);
+        }
+
+        .image-row {
+            border-bottom: 1px solid var(--line);
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 0 auto 48px;
+            max-width: 820px;
+            padding-bottom: 48px;
+        }
+
+        .image-row img {
+            aspect-ratio: 4 / 3;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(69, 55, 42, .1);
+            cursor: pointer;
+            display: block;
+            object-fit: cover;
+            position: relative;
+            transition: transform .2s ease, box-shadow .2s ease;
+            width: 100%;
+        }
+
+        .image-row img:hover {
+            box-shadow: 0 10px 22px rgba(69, 55, 42, .16);
+            transform: translateY(-3px);
+        }
+
+        .image-row img.is-expanded {
+            box-shadow: 0 14px 28px rgba(69, 55, 42, .24);
+            transform: scale(1.18);
+            z-index: 1;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 16px 40px;
+            }
+
+            body::before {
+                inset: 12px 8px;
+            }
+
+            h1 {
+                margin-bottom: 38px;
+            }
+
+            .image-row {
+                gap: 10px;
+                margin-bottom: 36px;
+                padding-bottom: 36px;
+            }
+
+            .author {
+                padding-right: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sa Aking Mga Kabata</h1>
+    
+    <!-- Stanza 1 -->
+    <p class="stanza">
+        <i>"Kapagka the salita'y isang kahatulan sa bayan,</i><br>
+        <em>sa nayo't mga kaharian,</em><br>
+        <mark>at isang tao'y katulad,</mark><br>
+        <small>kabagay ng alin mang likha noong kalayaan."</small>
+    </p>
+    <p class="author">— <strong><u>José Rizal</u></strong></p>
+    
+    <!-- Row of 3 pictures -->
+    <div class="image-row">
+        <img src="https://img.freepik.com/premium-photo/traditional-theater-performance-with-actors-performing-classic-play-drama_1314467-134412.jpg" alt="Cute 1" title="Theater playing">
+        <img src="https://cdn.britannica.com/27/12227-050-50F274AC/Drury-Lane-Theatre-London-Edward-Dayes-San-1795.jpg" alt="Picture 2" title="Theater painting">
+        <img src="https://www.elissos.com/wp-content/uploads/2015/07/ancient-greek-theater-odeon_feature-scaled.jpg" alt="Picture 3" title="Ancient Theater">
+    </div>
+
+    <!-- Stanza 2 -->
+    <p class="stanza">
+        <i>"Ang hindi marunong magmahal sa sariling wika,</i><br>
+        <em>ay higit pa sa hayop at malansang isda."</em>
+    </p>
+    <p class="author">— <strong><u>José Rizal</u></strong></p>
+    
+    <!-- Row of 3 pictures -->
+    <div class="image-row">
+        <img src="https://assets.ltkcontent.com/images/182801/Jose-Rizal-Quotes_1ce100790c.jpg" alt="Picture 4" title="Jose rizal quote">
+        <img src="https://th.bing.com/th/id/R.3f45e0e767ad53d0f656733dd055681b?rik=Iljlf7UE9utwBw&riu=http%3a%2f%2fphilnews.ph%2fwp-content%2fuploads%2f2024%2f08%2fjose-rizal.jpg&ehk=F8jtjVFUeCMNfSaXmJLLR6hTU5uYKNrgEt2ZY6SDioY%3d&risl=&pid=ImgRaw&r=0.jpg" alt="Picture 5" title="Jose Rizal">
+        <img src="https://wallpaperaccess.com/full/6130412.jpg" alt="Picture 6" title="Nice Painting">
+    </div>
+
+    <!-- Stanza 3 -->
+    <p class="stanza">
+        <i>"Sapagkat ang wika ay kaluluwa ng bayan,</i><br>
+        <em>at ito'y mahalaga sa pag-unlad ng sambayanan."</em>
+    </p>
+    <p class="author">— <strong><u>José Rizal</u></strong></p>
+    
+    <!-- Row of 3 pictures -->
+    <div class="image-row">
+        <img src="https://media.timeout.com/images/105222685/image.jpg" alt="Picture 7" title="Ancient War">
+        <img src="https://media.timeout.com/images/103166739/image.jpg" alt="Picture 8" title="Starry night">
+        <img src="https://i.pinimg.com/originals/94/a9/60/94a960f8fbca1d82ab316a9e2986a19a.jpg" alt="Picture 9" title="Napoleon Bonaporte">
+    </div>
+
+    <script>
+        const pictures = document.querySelectorAll('.image-row img');
+
+        pictures.forEach((picture) => {
+            picture.setAttribute('tabindex', '0');
+            picture.setAttribute('role', 'button');
+            picture.setAttribute('aria-label', `Expand ${picture.alt}`);
+
+            const toggleSize = () => {
+                pictures.forEach((otherPicture) => {
+                    if (otherPicture !== picture) {
+                        otherPicture.classList.remove('is-expanded');
+                    }
+                });
+                picture.classList.toggle('is-expanded');
+            };
+
+            picture.addEventListener('click', toggleSize);
+            picture.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleSize();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An overview of how technology supports modern everyday life and learning.">
+    <title>Technology in Everyday Life</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("https://wallpaperaccess.com/full/1415639.jpg") center / cover fixed no-repeat;
+            color: #222;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        header {
+            background: transparent;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        main {
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 45px 20px 70px;
+        }
+
+        .hero {
+            align-items: center;
+            display: grid;
+            gap: 35px;
+            grid-template-columns: 1fr 1fr;
+            margin: 0;
+        }
+
+        h1 {
+            color: #1d3557;
+            font-size: 2.2rem;
+            margin: 0;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, .8);
+        }
+
+        .hero-image {
+            aspect-ratio: 4 / 3;
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 12px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+            width: 100%;
+        }
+
+        .description {
+            background: white;
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+            padding: 25px;
+        }
+
+        .description p {
+            margin: 0;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                padding: 30px 20px 50px;
+            }
+
+            .hero {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="page-title">Why is Technology Important in Everyday Life?</h1>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="page-title">
+            <img class="hero-image" src="https://phptutorialpoints.in/wp-content/uploads/2024/07/fat-free-framework.jpg" alt="Abstract technology framework illustration">
+            <div class="description">
+                <p>
+                Technology is an important part of our everyday life. We use computers, smartphones, and the internet
+                for communication, education, entertainment, and work. Technology helps us find information faster
+                and makes many tasks easier. As students, we use technology to study, create projects, communicate
+                with classmates, and learn new skills.
+                </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
